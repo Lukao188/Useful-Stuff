@@ -4,13 +4,13 @@ top
 ```
 2)	How to list top/last ‘5’ cpu utilization processes?
 ``` 
-ps –auxf | sort –nr –k 3 | head –5   # For ps command 'a' show processes for all users, 'u' display the process's user/owner, 'x' also show processes not attached to a terminal, 'f' Displays a full listing
-ps –auxf | sort –nr –k 3 | tail  –5  # For sort command 'n' numeric sort in 'r' reverse order '-k 3' collumn 3 or CPU value
+ps -auxf | sort -nr -k 3 | head -5   # For ps command 'a' show processes for all users, 'u' display the process's user/owner, 'x' also show processes not attached to a terminal, 'f' Displays a full listing
+ps -auxf | sort -nr -k 3 | tail -5   # For sort command 'n' numeric sort in 'r' reverse order '-k 3' collumn 3 or CPU value
 ```
 3)	How to replace a string in a file? Stream editor sed
 ```
-sed –i “s/<old string>/<new String>/g”  <filename>
-Eg:  sed –i “s/unix/linux/g” /root/Desktop/language.txt
+sed -i “s/<old string>/<new String>/g”  <filename>
+Eg:  sed -i “s/unix/linux/g” /root/Desktop/language.txt
 ```
 4)	How to copy a file within box?
 ```
@@ -45,13 +45,48 @@ ls -ltr  # sort by modification time in reverse order, oldest entries will be sh
 ```
 9)	How to list all the running java processes?
 ```
-ps –ef | grep java  # '-e' means select all processes and '-f' in full format
+ps -ef | grep java  # '-e' means select all processes and '-f' in full format
 ```
 10)	How to list all the listening ports ?
 ```
-netstat –a
+netstat -a
 ```
-11) How to know the port number based on process id<PID>?
+11) How to know the port number based on process id or port number?
 ```
-netstat  –antp | grep <pid>
+netstat  -antp | grep <pid>   # Based on pid. In netstat '-a' all, '-n' show ip instead of host names, '-t' show only tcp connections, '-p' show process id/name
+netstat  -antp | grep <port>  # Based on port number
+```
+12)	How to change the file permissions?
+```
+chmod ugo+rwx <filename>  # give read, write, and execute to ugo: current user, group user, other user
+chmod 777 <filename>      # give read write executable to everyone
+```
+13)	Command to go to directory?
+```
+cd -  # previous
+cd ~  # users home directory
+```
+14)	Command to check ip address?
+```
+ifconfig
+```
+15)	Command to check free disk space?
+```
+df -h           # Shows the amount of disk space used and available on Linux file systems in human readable format
+du -sh /<path>  # Report only the total disk space occupied by a directory tree and to suppress subdirectories
+```
+16)	Command to find free memory?
+```
+free -m   # In '-m' megabytes
+vmstat    # Used memory (statistics)
+```
+17)	How to change ownership of a file?
+```
+chown  <user name>:<group name>  <file name>
+chown -R <user name>:<group name> <Path of the directory>  # Recursively change for the entire directory
+```
+18)	How to find how many users are logged in that unix box? 
+```
+users
+who
 ```
