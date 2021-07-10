@@ -1,7 +1,8 @@
 1)	top:  this command is used to know the cpu utilization in Linux .
 ` top`
 3)	How to list top/last ‘5’ cpu utilization processes?
-``` ps –auxf | sort –nr –k 3 | head –5
+``` 
+ps –auxf | sort –nr –k 3 | head –5
 ps –auxf | sort –nr –k 3 | tail  –5
 ```
 5)	How to replace a string in a file?
