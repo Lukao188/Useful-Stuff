@@ -106,7 +106,7 @@ more /etc/*release
 ```
 22)	Crontab syntax?
 ```
-* * *	*	*	<path of script>  # minute (0-59), hour (0-23), day of month (1-31), month (1-12), day of week (0-6) Sunday 0 or 7
+* * * * * <path of script>  # minute (0-59), hour (0-23), day of month (1-31), month (1-12), day of week (0-6) Sunday 0 or 7
 crontab –l                  # list all cronjobs on your system
 less /etc/crontab           # display contents of the root user’s crontab
 ```
