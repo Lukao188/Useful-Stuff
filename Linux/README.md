@@ -110,3 +110,14 @@ more /etc/*release
 crontab –l                  # list all cronjobs on your system
 less /etc/crontab           # display contents of the root user’s crontab
 ```
+23)	What is the difference between kill –3, kill –9 and kill –15?
+```
+kill -3 <PID>    # to generate the “Thread dumps”
+kill -9 <PID>    # to kill the process forcibly
+kill -15 <PID>   # it will wait to kill the process until the child processes are killed
+```
+24)	What is the command to make/extract a tar file?
+```
+tar -cvf <filename>.tar <path of the desired folder>   # '-c' create an archive file, '-v' show the progress of the archive file, '-f' filename of the archive file
+tar -xvf <filename>.tar /<directory to extract>        # '-x' extract an archive file
+```
