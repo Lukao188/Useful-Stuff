@@ -1,9 +1,11 @@
 1)	top:  this command is used to know the cpu utilization in Linux .
-` top`
+```
+top
+```
 2)	How to list top/last ‘5’ cpu utilization processes?
 ``` 
-ps –auxf | sort –nr –k 3 | head –5
-ps –auxf | sort –nr –k 3 | tail  –5
+ps –auxf | sort –nr –k 3 | head –5   # For ps command 'a' show processes for all users, 'u' display the process's user/owner, 'x' also show processes not attached to a terminal, 'f' Displays a full listing
+ps –auxf | sort –nr –k 3 | tail  –5  # For sort command 'n' numeric sort in 'r' reverse order '-k 3' collumn 3 or CPU value
 ```
 3)	How to replace a string in a file? Stream editor sed
 ```
@@ -33,24 +35,23 @@ ftp> get <filename>                         # get a file from unix box to window
 ftp> mget <file1> <file2> ..<file n>        # get multiple file from unix box to windows
 ftp> quit                                   # used to quit from unix box.
 ```
-8)	How to copy a file from windows to unix?
-10)	List  all the files and directories in a directory?
-11)	List all the hidden files in a directory?
-12)	How to list all the files in ling list format?
-13)	How to list all the running java processes?
-14)	How to list all the listening ports ?
-15)	How to know the port number based on process id<PID>?
-16)	How to know the processed id <PID> based on port number?
-17)	How to change the file permissions?
-18)	What is the use of sticky bit?
-19)	Command to go to previous directory?
-20)	Command to go to root User directory?
-21)	Command to check ip address?
-22)	Command to check free disk space?
-23)	Command to find free memory?
-24)	How to change ownership of a file?
-25)	How to find how many users are logged in that unix box?
-26)	How to find with which user name is logged in?
-27)	How to find the given OS is 32 bit or 64 bit?
-28)	How to find the given os version?
-29)	I want to execute a script, everyday at 5:00pm. 	Write a  crontab syntax to achieve that?
+7)	How to copy a file from windows to unix? WINSCP, MobaXterm, X–Manager, Reflection –X…. etc.
+8)	List  all the files and directories in a directory?
+```
+ls       # list all the files and directories in within directory
+ls -a    # list all the hidden files in a directory
+ls -l    # list files in a long list format, with permissions, '-' indicates files, 'd' indicates directory
+ls -ltr  # sort by modification time in reverse order, oldest entries will be shown first
+```
+9)	How to list all the running java processes?
+```
+ps –ef | grep java  # '-e' means select all processes and '-f' in full format
+```
+10)	How to list all the listening ports ?
+```
+netstat –a
+```
+11) How to know the port number based on process id<PID>?
+```
+netstat  –antp | grep <pid>
+```
