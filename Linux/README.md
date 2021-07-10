@@ -90,3 +90,23 @@ chown -R <user name>:<group name> <Path of the directory>  # Recursively change 
 users
 who
 ```
+19)	How to find with which user name is logged in?
+```
+whoami
+who am i 
+```
+20)	How to find the given OS is 32 bit or 64 bit?
+```
+arch
+uname -m
+```
+21)	How to find the given os version?
+```
+more /etc/*release
+```
+22)	Crontab syntax?
+```
+* * *	*	*	<path of script>  # minute (0-59), hour (0-23), day of month (1-31), month (1-12), day of week (0-6) Sunday 0 or 7
+crontab –l                  # list all cronjobs on your system
+less /etc/crontab           # display contents of the root user’s crontab
+```
