@@ -121,3 +121,92 @@ kill -15 <PID>   # it will wait to kill the process until the child processes ar
 tar -cvf <filename>.tar <path of the desired folder>   # '-c' create an archive file, '-v' show the progress of the archive file, '-f' filename of the archive file
 tar -xvf <filename>.tar /<directory to extract>        # '-x' extract an archive file
 ```
+25)	What is the difference between tail and head commands?
+```
+head    # lists the top files
+tail    # lists the last files
+```
+26)	How to add a new user and change it's password?
+```
+useradd <user name>
+passwd <new password>
+```
+27)	How to check the connectivity between two unix boxes?
+```
+ping <ip address>
+```
+28)	What is the difference between find and grep command?
+```
+find . -name “<filename>”    # searches recursively in current directory
+find / -name “<filename>”    # searches recursively all the directories in file system
+find ~/ -name “<filename>”   # searches recursively the root directory
+
+grep “<string>”	<filename>   # searches the word in a particular file, but it is not recursive
+```
+29)	How to check Webserver is running or not?
+```
+ps  auxf | grep httpd
+```
+30)	How to run a process in the background? Put  “& “ at the end of the command.
+31)	How to bring the process to foreground?
+```
+fg  <pid>
+```
+32)	Command to find files which are older than 15 days?
+```
+find <directory path> -atime +15	   # find {directory to search in}  –atime  {+ greater than, – less than, without anything means equal to}  {number of days}
+atime   # file access time shows the last time the data from a file was accessed 
+ctime   # change time changes when you change file's ownership or access permissions
+mtime   # modify time shows time of the  last change to file's contents
+```
+33)	Command to find recent modified files?
+```
+ls -lrt
+```
+34)	What is the use of umask and what is the default umask value? The umask specifies the permissions you do not want given by default to newly created files and directories. Default umask value is 022.
+35)	How to mount a file system?
+```
+mount <file system name> <where to mount>    # A file system can be "mounted" on your Linux system interactively or automatically at startup. Then the file system is just as accessible as any other file system on your computer.
+Eg: mount/dev/cdrom /mnt/cdrom
+umount <file system name>                    # Command to "detach" a mounted file or directory 
+```
+36) Command  to find top 5 files which consumes high disk usage?
+```
+du -sm *|sort -nr | head -5       # Here ‘s’ summarizes all the reports, ‘m’ indicates size in MB.
+```
+37)	What is the command to find the files size more than 100 MB?
+```
+find . -size +100M    # In current directory
+find /<dirname> -size +100M
+```
+38)	What is the use of lsof command? Lsof stands for list the open files, which will list all the open files in the system (including network connection, devices and directories).
+39)	What is the difference between softlink and hardlink?
+```
+softlink     # create a separate inode for linked file. We should not delete the original file to access the softlink.
+hardlink     # It doesn’t have a separate inode. Hard link file will be deleted when we delete the original file.
+```
+40)	What are different run levels in Linux?
+```
+Run  Level 0: Halt System (To shutdown the system)
+Run Level 1: Single user mode
+Run Level 2: Basic multi user mode without NFS
+Run Level 3: Full multi user mode (text based)
+Run Level 4: unused
+Run Level 5: Multi user mode with Graphical User Interface
+Run Level 6: Reboot System
+```
+41)	Command to find HOSTNAME of system?
+```
+hostname
+```
+42)	Command to display number of lines in a file?
+```
+wc -l <filemname>   # number of lines in a file
+wc -m <filename>    # number of characters in a file
+wc -w <filename>    # number of words in a file
+wc <file name>      # number of lines ,words and bytes in a given file
+```
+43)	Command to list number of files in a directory?
+```
+ls -l <directory> |  wc  -l
+```
